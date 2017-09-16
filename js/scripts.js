@@ -1,7 +1,28 @@
+function addOne() {
+  $("#goal-list").append("<li class='list-item'>" + $("#type").val() + ": " + $("#new-restaurant").val() + "</li>");
+  $("#new-restaurant").val("");
+}
+
 $(document).ready(function() {
   alert($("#css-item").text());
-  $("#goal-button").click(function() {
-    $("#goal-list").append("<li class='list-item'>" + $("#new-goal").val() + "</li>");
-    $("#new-goal").val("");
-  })
-})
+
+
+  $("#goal-list").html("<label>Restaurants</label>");
+  $("#restaurant-button").click(addOne());
+  
+
+
+
+  $("#new-restaurant").bind("enterKey", function() {
+    addOne();
+  });
+
+  $("#new-restaurant").keyup(function(e) {
+    if (e.keyCode ==13) {
+
+      $(this).trigger("enterKey");
+    }
+  });
+
+
+});

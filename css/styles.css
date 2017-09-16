@@ -27,3 +27,8 @@ body {
   border: solid;
   border-color: grey beige white grey;
 }
+
+#type {
+  padding: 10px;
+  height:50px;
+}
