@@ -4,12 +4,15 @@ function addOne() {
 }
 
 $(document).ready(function() {
-  alert($("#css-item").text());
-
-
+  //alert($("#css-item").text());
   $("#goal-list").html("<label>Restaurants</label>");
-  $("#restaurant-button").click(addOne());
-  
+  $("#restaurant-button").click(function() {
+    addOne();
+  });
+  $("#clear-button").click(function() {
+    $("#goal-list").html("");
+  });
+
 
 
 
